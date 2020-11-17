@@ -13,7 +13,6 @@ This proposal is at stage 0 of [the TC39 process](https://tc39.es/process-docume
 
 In ECMAScript regex character classes, we propose to add syntax & semantics for the following set operations:
 
-- union
 - difference/subtraction
 - intersection
 - nested character classes
@@ -92,7 +91,8 @@ Several other regex engines support some or all of the proposed extensions in so
 | [.Net](https://docs.microsoft.com/en-us/dotnet/standard/base-types/character-classes-in-regular-expressions#CharacterClassSubtraction)       | ✅    | ✅               | ❌           | ✅             | ❌                   |
 | [XML Schema](https://www.w3.org/TR/xmlschema-2/#charcter-classes)                                                                            | ✅    | ✅               | ❌           | ✅             | ❌                   |
 | [Apache Xerces2 XPath regex](https://xerces.apache.org/xerces2-j/javadocs/xerces2/org/apache/xerces/impl/xpath/regex/RegularExpression.html) | ✅    | ✅               | ✅           | ✅             | ❌                   |
-| this proposal for ECMAScript                                                                                                                 | ✅    | ✅               | ✅           | ✅             | ❌                   |
+| ECMAScript prior to this proposal                                                                                                            | ✅    | ❌               | ❌           | ❌             | ❌                   |
+| ECMAScript with this proposal                                                                                                                | ✅    | ✅               | ✅           | ✅             | ❌                   |
 
 <sup>\*</sup> Subtraction is [documented](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/regex/Pattern.html#subtraction1) as intersection with negation. With only support for negation + nested classes, you already have the functional equivalent of intersection & subtraction: `[^[^ab][^cd]] === [[ab]&&[cd]]` and `[^[^ab][cd]] === [[ab]--[cd]]`. This is just not very readable. For this reason, our proposal includes dedicated syntax for intersection and subtraction as well.
 
