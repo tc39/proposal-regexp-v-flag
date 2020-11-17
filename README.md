@@ -101,7 +101,7 @@ These all differ somewhat in syntax and semantics (e.g. operator precedence). Re
 - [regular expression flavors that support character class subtraction](https://www.regular-expressions.info/charclasssubtract.html)
 - [regular expression flavors that support character class intersection](https://www.regular-expressions.info/charclassintersect.html)
 
-Some StackOverflow discussions:
+Some Stack Overflow discussions:
 
 - [#3201689](https://stackoverflow.com/q/3201689/96656)
 - [#10777728](https://stackoverflow.com/q/10777728/96656)
@@ -113,7 +113,7 @@ Some StackOverflow discussions:
 
 ## Proposed solution
 
-We propose to extend the syntax for character classes to add support for set difference, set intersection, and nested character classes.
+We propose to extend the syntax for character classes to add support for set difference/subtraction, set intersection, and nested character classes.
 
 ## High-level API
 
