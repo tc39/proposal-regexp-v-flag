@@ -35,19 +35,19 @@ Real-world usage examples from code using ICU’s `UnicodeSet` which implements 
 - Code that looks for non-ASCII digits, to convert them to ASCII digits:
 
     ```
-    [\p{Decimal_Number}-[0-9]]
+    [\p{Decimal_Number}--[0-9]]
     ```
 
 - Looking for spans of "word/identifier letters" of specific scripts:
 
     ```
-    [\p{Script=Khmer}&[\p{Letter}\p{Mark}\p{Number}]]
+    [\p{Script=Khmer}&&[\p{Letter}\p{Mark}\p{Number}]]
     ```
 
 - Looking for “breaking spaces”:
 
     ```
-    [\p{White_Space}-\p{Line_Break=Glue}]
+    [\p{White_Space}--\p{Line_Break=Glue}]
     ```
 
     Note that ECMAScript currently doesn’t support `\p{Line_Break=…}` — this is an illustrative example regardless.
@@ -55,29 +55,29 @@ Real-world usage examples from code using ICU’s `UnicodeSet` which implements 
 - Looking for emoji characters except for the ASCII ones:
 
     ```
-    [\p{Emoji}-[#*0-9]]
+    [\p{Emoji}--[#*0-9]]
 
     // …or…
 
-    [\p{Emoji}-\p{ASCII}]
+    [\p{Emoji}--\p{ASCII}]
     ```
 
 - Looking for non-script-specific combining marks:
 
     ```
-    [\p{Nonspacing_Mark}&[\p{Script=Inherited}\p{Script=Common}]]
+    [\p{Nonspacing_Mark}&&[\p{Script=Inherited}\p{Script=Common}]]
     ```
 
 - Looking for “invisible non-ASCII characters”:
 
     ```
-    [\p{Other}\p{Separator}\p{White_Space}\p{Default_Ignorable_Code_Point}-[\x20]]
+    [\p{Other}\p{Separator}\p{White_Space}\p{Default_Ignorable_Code_Point}--[\x20]]
     ```
 
 - Looking for “first letter in each script” starting from:
 
     ```
-    [\P{NFC_Quick_Check=No}-\p{Script=Common}-\p{Script=Inherited}-\p{Script=Unknown}]
+    [\P{NFC_Quick_Check=No}--\p{Script=Common}--\p{Script=Inherited}--\p{Script=Unknown}]
     ```
 
     Note that ECMAScript currently doesn’t support [`\p{NFC_Quick_Check=…}`](https://www.unicode.org/reports/tr15/#Quick_Check_Table) — this is an illustrative example regardless.
