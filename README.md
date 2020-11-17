@@ -67,7 +67,7 @@ Real-world usage examples from code using ICU’s `UnicodeSet` which implements 
     [\p{Nonspacing_Mark}&&[\p{Script=Inherited}\p{Script=Common}]]
     ```
 
-- Looking for “invisible non-ASCII characters”:
+- Looking for “invisible characters” except for ASCII space:
 
     ```
     [\p{Other}\p{Separator}\p{White_Space}\p{Default_Ignorable_Code_Point}--[\x20]]
