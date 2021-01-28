@@ -123,7 +123,16 @@ We propose to extend the syntax for character classes to add support for set dif
 
 ### FAQ
 
-…
+#### Is the new syntax backwards-compatible? Do we need another regular expression flag?
+
+It’s an explicit goal of this proposal to not break backwards compatibility. Concretely, we don’t want to change behavior of any regular expression pattern that currently does not throw an exception. We believe this is possible by doing the following:
+
+- First, we limit this new functionality to regular expressions with the `u` (Unicode) flag.
+- Second, we limit the new syntax to a new escape sequence such as `\UnicodeSet{…}`.
+
+This addresses all back-compat concerns because `\U` throws in Unicode regular expressions (but it doesn’t in non-Unicode mode, which is why we can’t support non-Unicode mode). Banning the use of unknown escape sequences in `u` RegExps was [a conscious choice](https://web.archive.org/web/20141214085510/https://bugs.ecmascript.org/show_bug.cgi?id=3157), made to enable exactly this kind of scenario.
+
+Scoping the syntax in this manner also removes the need to introduce a new regular expression flag for this functionality.
 
 ## Illustrative examples
 
