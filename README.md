@@ -151,6 +151,10 @@ Some Stack Overflow discussions:
 - [#44771741](https://stackoverflow.com/q/44771741/96656)
 - [#55095497](https://stackoverflow.com/q/55095497/96656)
 
+### How does this interact with properties of strings a.k.a. [the sequence properties proposal](https://github.com/tc39/proposal-regexp-unicode-sequence-properties)?
+
+If the committee accepts stage 1 for this set notation proposal, we commit to describing the exact interactions between the two proposals on the path to stage 2/3.
+
 ## TC39 meeting notes
 
 - [November 2020](https://github.com/tc39/notes/blob/master/meetings/2020-11/nov-18.md#adopting-unicode-behavior-for-set-notation-in-regular-expressions)
