@@ -45,7 +45,7 @@ Within regular expression patterns, we propose enabling the following syntax:
 [A&&B]
 
 // nested character class
-[A--[0-9]
+[A--[0-9]]
 ```
 
 Throughout these high-level examples, `A` and `B` can be thought of as placeholders for a character class (e.g. `[a-z]`) or a property escape (e.g. `\p{ASCII}`). See [the illustrative examples section](https://github.com/mathiasbynens/proposal-regexp-set-notation#illustrative-examples) for concrete real-world use cases.
