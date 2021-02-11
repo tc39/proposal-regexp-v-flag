@@ -35,7 +35,9 @@ We propose to extend the syntax for character classes to add support for set dif
 
 ## High-level API
 
-Within regular expression patterns, we propose enabling the following syntax:
+Within regular expression patterns, we propose enabling the following functionality.
+We have not yet settled on several issues including single vs. double punctuation,
+some distinct prefix to not break existing expressions (see FAQ), etc.
 
 ```
 // difference/subtraction
@@ -48,7 +50,7 @@ Within regular expression patterns, we propose enabling the following syntax:
 [A--[0-9]]
 ```
 
-Throughout these high-level examples, `A` and `B` can be thought of as placeholders for a character class (e.g. `[a-z]`) or a property escape (e.g. `\p{ASCII}`). See [the illustrative examples section](https://github.com/mathiasbynens/proposal-regexp-set-notation#illustrative-examples) for concrete real-world use cases.
+Throughout these high-level examples, `A` and `B` can be thought of as placeholders for a character class (e.g. `[a-z]`) or a property escape (e.g. `\p{ASCII}`). See [the illustrative examples section](#illustrative-examples) for concrete real-world use cases.
 
 ## Illustrative examples
 
@@ -112,6 +114,7 @@ It’s an explicit goal of this proposal to not break backwards compatibility. C
 
 - First, we limit this new functionality to regular expressions with the `u` (Unicode) flag.
 - Second, we limit the new syntax to a new escape sequence such as `\UnicodeSet{…}`.
+  (We have not yet settled on exactly which syntax to use.)
 
 This addresses all back-compat concerns because `\U` throws in Unicode regular expressions (but it doesn’t in non-Unicode mode, which is why we can’t support non-Unicode mode). Banning the use of unknown escape sequences in `u` RegExps was [a conscious choice](https://web.archive.org/web/20141214085510/https://bugs.ecmascript.org/show_bug.cgi?id=3157), made to enable exactly this kind of scenario.
 
@@ -129,8 +132,8 @@ Several other regex engines support some or all of the proposed extensions in so
 | [.Net](https://docs.microsoft.com/en-us/dotnet/standard/base-types/character-classes-in-regular-expressions#CharacterClassSubtraction)       | ✅    | ✅               | ❌           | ✅             | ❌                   |
 | [XML Schema](https://www.w3.org/TR/xmlschema-2/#charcter-classes)                                                                            | ✅    | ✅               | ❌           | ✅             | ❌                   |
 | [Apache Xerces2 XPath regex](https://xerces.apache.org/xerces2-j/javadocs/xerces2/org/apache/xerces/impl/xpath/regex/RegularExpression.html) | ✅    | ✅               | ✅           | ✅             | ❌                   |
-| Python regex                                                                                                                                 | ✅    | ✅               | ✅           | ✅             | ✅                   |
-| Ruby                                                                                                                                         | ✅    | ❌               | ✅           | ❌             | ❌                   |
+| [Python regex module](https://pypi.org/project/regex/) (not built-in "re")                                                                   | ✅    | ✅               | ✅           | ✅             | ✅                   |
+| [Ruby Regexp](https://docs.ruby-lang.org/en/2.0.0/Regexp.html#class-Regexp-label-Character+Classes)                                          | ✅    | ❌               | ✅           | ❌             | ❌                   |
 | ECMAScript prior to this proposal                                                                                                            | ✅    | ❌               | ❌           | ❌             | ❌                   |
 | ECMAScript with this proposal                                                                                                                | ✅    | ✅               | ✅           | ✅             | ❌                   |
 
