@@ -161,7 +161,7 @@ If the committee accepts stage 1 for this set notation proposal, we commit to de
 ## TC39 meeting notes
 
 - [November 2020](https://github.com/tc39/notes/blob/master/meetings/2020-11/nov-18.md#adopting-unicode-behavior-for-set-notation-in-regular-expressions)
-- January 2021: TODO
+- [January 2021](https://github.com/tc39/notes/blob/master/meetings/2021-01/jan-28.md#regexp-set-notation-for-stage-1)
 
 ## Specification
 
