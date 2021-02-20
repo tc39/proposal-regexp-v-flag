@@ -105,6 +105,44 @@ Real-world usage examples from code using ICU’s `UnicodeSet` which implements 
     ```
 
     Note that ECMAScript currently doesn’t support [`\p{NFC_Quick_Check=…}`](https://www.unicode.org/reports/tr15/#Quick_Check_Table) — this is an illustrative example regardless.
+    
+- All BMP code points that are either a letter, a mark (e.g. diacritic), or a decimal number:
+
+    ```
+    [[:BMP:]&[[:L:][:M:][:Nd:]]]
+    ```
+    
+- All code points, except for those in the "Other" General_Category, but add back control characters:
+
+    ```
+    [[:any:]-[:c:] [:cc:]]
+    ```
+
+- All assigned code points, except for separators:
+
+    ```
+    [[:assigned:]-[:Z:]]
+    ```
+
+- All right-to-left and Arabic Letter code points, but remove unassigned code points:
+
+    ```
+    [[:BidiClass=R:][:BidiClass=AL:]-[:unassigned:]]
+    ```
+
+- All right-to-left and Arabic Letter code points with General_Category "Letter":
+
+
+    ```
+    [[:L:]&[[:BidiClass=R:][:BidiClass=AL:]]]
+    ```
+
+- All characters in the "Other" General_Category EXCEPT for format and control characters (or, equivalently, all surrogate, private use, and unassigned code points):
+
+    ```
+    [[:C:]-[:Cf:]-[:Cc:]]
+    ```
+
 
 ## FAQ
 
