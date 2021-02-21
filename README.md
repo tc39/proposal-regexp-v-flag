@@ -109,38 +109,38 @@ Real-world usage examples from code using ICU’s `UnicodeSet` which implements 
 - All BMP code points that are either a letter, a mark (e.g. diacritic), or a decimal number:
 
     ```
-    [[:BMP:]&[[:L:][:M:][:Nd:]]]
+    [\p{BMP}&&[\p{L}\p{M}\p{Nd}]]
     ```
     
 - All code points, except for those in the "Other" General_Category, but add back control characters:
 
     ```
-    [[:any:]-[:c:] [:cc:]]
+    [\p{any}--\p{C}\p{Cc}]
     ```
 
 - All assigned code points, except for separators:
 
     ```
-    [[:assigned:]-[:Z:]]
+    [\p{assigned}--\p{Z}]
     ```
 
 - All right-to-left and Arabic Letter code points, but remove unassigned code points:
 
     ```
-    [[:BidiClass=R:][:BidiClass=AL:]-[:unassigned:]]
+    [\p{BidiClass=R}\p{BidiClass=AL}--\p{unassigned}]
     ```
 
 - All right-to-left and Arabic Letter code points with General_Category "Letter":
 
 
     ```
-    [[:L:]&[[:BidiClass=R:][:BidiClass=AL:]]]
+    [\p{L}&&[\p{BidiClass=R}\p{BidiClass=AL}]]
     ```
 
 - All characters in the "Other" General_Category EXCEPT for format and control characters (or, equivalently, all surrogate, private use, and unassigned code points):
 
     ```
-    [[:C:]-[:Cf:]-[:Cc:]]
+    [\p{C}--\p{Cf}--\p{Cc}]
     ```
 
 
