@@ -105,42 +105,48 @@ Real-world usage examples from code using ICU’s `UnicodeSet` which implements 
     ```
 
     Note that ECMAScript currently doesn’t support [`\p{NFC_Quick_Check=…}`](https://www.unicode.org/reports/tr15/#Quick_Check_Table) — this is an illustrative example regardless.
-    
+
 - All BMP code points that are either a letter, a mark (e.g. diacritic), or a decimal number:
 
     ```
-    [\p{BMP}&&[\p{L}\p{M}\p{Nd}]]
+    [\p{BMP}&&[\p{Letter}\p{Mark}\p{Decimal_Number}]]
     ```
-    
-- All code points, except for those in the "Other" General_Category, but add back control characters:
+
+    Note that ECMAScript currently doesn’t support `\p{BMP}` — this is an illustrative example regardless.
+
+- All code points, except for those in the “Other” `General_Category`, but add back control characters:
 
     ```
-    [\p{any}--\p{C}\p{Cc}]
+    [\p{Any}--\p{Other}\p{Control}]
     ```
 
 - All assigned code points, except for separators:
 
     ```
-    [\p{assigned}--\p{Z}]
+    [\p{Assigned}--\p{Separator}]
     ```
 
 - All right-to-left and Arabic Letter code points, but remove unassigned code points:
 
     ```
-    [\p{BidiClass=R}\p{BidiClass=AL}--\p{unassigned}]
+    [\p{Bidi_Class=R}\p{Bidi_Class=AL}--\p{Unassigned}]
     ```
 
-- All right-to-left and Arabic Letter code points with General_Category "Letter":
+    Note that ECMAScript currently doesn’t support [`\p{Bidi_Class=…}`](https://www.unicode.org/reports/tr44/#Bidi_Class) — this is an illustrative example regardless.
+
+- All right-to-left and Arabic Letter code points with `General_Category` “Letter”:
 
 
     ```
-    [\p{L}&&[\p{BidiClass=R}\p{BidiClass=AL}]]
+    [\p{Letter}&&[\p{Bidi_Class=R}\p{Bidi_Class=AL}]]
     ```
 
-- All characters in the "Other" General_Category EXCEPT for format and control characters (or, equivalently, all surrogate, private use, and unassigned code points):
+    Note that ECMAScript currently doesn’t support [`\p{Bidi_Class=…}`](https://www.unicode.org/reports/tr44/#Bidi_Class) — this is an illustrative example regardless.
+
+- All characters in the “Other” `General_Category` EXCEPT for format and control characters (or, equivalently, all surrogate, private use, and unassigned code points):
 
     ```
-    [\p{C}--\p{Cf}--\p{Cc}]
+    [\p{Other}--\p{Format}--\p{Control}]
     ```
 
 
