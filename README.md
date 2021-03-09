@@ -200,7 +200,7 @@ Some Stack Overflow discussions:
 
 ### How does this interact with properties of strings a.k.a. [the sequence properties proposal](https://github.com/tc39/proposal-regexp-unicode-sequence-properties)?
 
-If the committee accepts stage 1 for this set notation proposal, we commit to describing the exact interactions between the two proposals on the path to stage 2/3.
+We commit to describing the exact interactions between the two proposals on the path to stage 2/3. See [issue #3](https://github.com/tc39/proposal-regexp-set-notation/issues/3) for details.
 
 ## TC39 meeting notes
 
