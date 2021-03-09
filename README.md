@@ -50,7 +50,7 @@ some distinct prefix to not break existing expressions (see FAQ), etc.
 [A--[0-9]]
 ```
 
-Throughout these high-level examples, `A` and `B` can be thought of as placeholders for a character class (e.g. `[a-z]`) or a property escape (e.g. `\p{ASCII}`). See [the illustrative examples section](#illustrative-examples) for concrete real-world use cases.
+Throughout these high-level examples, `A` and `B` can be thought of as placeholders for a character class (e.g. `[a-z]`) or a property escape (e.g. `\p{ASCII}`) and maybe (subject to discussion of specifics) single characters and/or character ranges. See [the illustrative examples section](#illustrative-examples) for concrete real-world use cases.
 
 ## Illustrative examples
 
@@ -95,7 +95,7 @@ Real-world usage examples from code using ICU’s `UnicodeSet` which implements 
 - Looking for “invisible characters” except for ASCII space:
 
     ```
-    [\p{Other}\p{Separator}\p{White_Space}\p{Default_Ignorable_Code_Point}--[\x20]]
+    [[\p{Other}\p{Separator}\p{White_Space}\p{Default_Ignorable_Code_Point}]--\x20]
     ```
 
 - Looking for “first letter in each script” starting from:
@@ -106,18 +106,16 @@ Real-world usage examples from code using ICU’s `UnicodeSet` which implements 
 
     Note that ECMAScript currently doesn’t support [`\p{NFC_Quick_Check=…}`](https://www.unicode.org/reports/tr15/#Quick_Check_Table) — this is an illustrative example regardless.
 
-- All BMP code points that are either a letter, a mark (e.g. diacritic), or a decimal number:
+- All Greek code points that are either a letter, a mark (e.g. diacritic), or a decimal number:
 
     ```
-    [\p{BMP}&&[\p{Letter}\p{Mark}\p{Decimal_Number}]]
+    [\p{Greek}&&[\p{Letter}\p{Mark}\p{Decimal_Number}]]
     ```
-
-    Note that ECMAScript currently doesn’t support `\p{BMP}` — this is an illustrative example regardless.
 
 - All code points, except for those in the “Other” `General_Category`, but add back control characters:
 
     ```
-    [\p{Any}--\p{Other}\p{Control}]
+    [[\p{Any}--\p{Other}]\p{Control}]
     ```
 
 - All assigned code points, except for separators:
@@ -129,13 +127,12 @@ Real-world usage examples from code using ICU’s `UnicodeSet` which implements 
 - All right-to-left and Arabic Letter code points, but remove unassigned code points:
 
     ```
-    [\p{Bidi_Class=R}\p{Bidi_Class=AL}--\p{Unassigned}]
+    [[\p{Bidi_Class=R}\p{Bidi_Class=AL}]--\p{Unassigned}]
     ```
 
     Note that ECMAScript currently doesn’t support [`\p{Bidi_Class=…}`](https://www.unicode.org/reports/tr44/#Bidi_Class) — this is an illustrative example regardless.
 
 - All right-to-left and Arabic Letter code points with `General_Category` “Letter”:
-
 
     ```
     [\p{Letter}&&[\p{Bidi_Class=R}\p{Bidi_Class=AL}]]
