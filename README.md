@@ -151,15 +151,43 @@ Real-world usage examples from code using ICU’s `UnicodeSet` which implements 
 
 ### Is the new syntax backwards-compatible? Do we need another regular expression flag?
 
-It’s an explicit goal of this proposal to not break backwards compatibility. Concretely, we don’t want to change behavior of any regular expression pattern that currently does not throw an exception. We believe this is possible by doing the following:
+It is an explicit goal of this proposal to not break backwards compatibility. Concretely, we don’t want to change behavior of any regular expression pattern that currently does not throw an exception. There needs to be some way to indicate that the new syntax is in use.
 
-- First, we limit this new functionality to regular expressions with the `u` (Unicode) flag.
-- Second, we limit the new syntax to a new escape sequence such as `\UnicodeSet{…}`.
-  (We have not yet settled on exactly which syntax to use.)
+We considered 3 options:
+- A new flag outside the expression itself.
+- A modifier inside the expression, of the form `(?L)` where `L` is one ASCII letter. (Several regex engines support various modifiers like this.)
+- A prefix like `\U...` that is not valid under the current `u` flag (Unicode mode) – but note that `\U` without the `u` flag is just the same as `U` itself.
+  - (Banning the use of unknown escape sequences in `u` RegExps was [a conscious choice](https://web.archive.org/web/20141214085510/https://bugs.ecmascript.org/show_bug.cgi?id=3157), made to enable this kind of extension.)
 
-This addresses all back-compat concerns because `\U` throws in Unicode regular expressions (but it doesn’t in non-Unicode mode, which is why we can’t support non-Unicode mode). Banning the use of unknown escape sequences in `u` RegExps was [a conscious choice](https://web.archive.org/web/20141214085510/https://bugs.ecmascript.org/show_bug.cgi?id=3157), made to enable exactly this kind of scenario.
+The prefix was suggested in an early TC39 meeting, so we were working with variations of that, for example:
+```
+UnicodeCharacterClass = '\UniSet{' ClassContents '}'
+```
 
-Scoping the syntax in this manner also removes the need to introduce a new regular expression flag for this functionality.
+However, we found that this is not very developer-friendly.
+
+In particular, one would have to write the prefix **and** use the ‘u’ flag. Waldemar pointed out that the prefix *looks like* it should be enough, and therefore a developer may well accidentally omit adding the `u` flag.
+
+Also, the use of a backslash-letter prefix would want to enclose the new syntax in `{curly braces}` because other such syntax (`\p{property}`, `\u{12345}`, ...) uses curly braces – but not using `[square brackets]` for the outermost level of a character class looks strange.
+
+Finally, when an expression has several new-syntax character classes, the prefix would have to be used on each one, which is clunky.
+
+An in-expression modifier is an attractive alternative, but ECMAScript does not yet use any such modifiers.
+
+Therefore, a new flag is the simplest, most user-friendly, and syntactically and semantically cleanest way to indicate the new character class syntax. It should **imply and build on** the `u` flag.
+
+We suggest using flag `v` for the next letter after `u`.
+
+We also suggest that the [proposed properties of strings](https://github.com/tc39/proposal-regexp-unicode-sequence-properties) require use of this same new flag.
+
+In other words, the new flag would indicate several connected changes related to properties and character classes:
+- properties of strings
+- character classes may contain multi-character-string elements
+- nested classes
+- set operators
+- simpler parsing of dashes and square brackets
+
+For more discussion see [issue 2](https://github.com/tc39/proposal-regexp-set-notation/issues/2).
 
 ### What’s the precedent in other RegExp flavors?
 
@@ -198,6 +226,8 @@ Some Stack Overflow discussions:
 ### How does this interact with properties of strings a.k.a. [the sequence properties proposal](https://github.com/tc39/proposal-regexp-unicode-sequence-properties)?
 
 We commit to describing the exact interactions between the two proposals on the path to stage 2/3. See [issue #3](https://github.com/tc39/proposal-regexp-set-notation/issues/3) for details.
+
+We propose to require the new flag in order to enable properties-of-strings as well as allowing new-syntax character classes to contain multi-character-string elements (initially from properties-of-strings used inside a class).
 
 ### What about symmetric difference?
 
