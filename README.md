@@ -243,8 +243,8 @@ Instead, we are proposing to reserve doubled ASCII punctuation and symbols for f
 
 ## Specification
 
-* [Ecmarkup source](https://github.com/mathiasbynens/proposal-regexp-set-notation/blob/main/spec.html)
-* [HTML version](https://mathiasbynens.github.io/proposal-regexp-set-notation/)
+* [Ecmarkup source](https://github.com/tc39/proposal-regexp-set-notation/blob/main/spec.html)
+* [HTML version](http://tc39.es/proposal-regexp-set-notation/)
 
 ## Implementations
 
