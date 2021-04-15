@@ -5,7 +5,6 @@
     "build": "mkdir -p dist; ecmarkup --verbose spec.html dist/index.html --css dist/ecmarkup.css --js dist/ecmarkup.js"
   },
   "devDependencies": {
-    "@alrra/travis-scripts": "^3.0.1",
-    "ecmarkup": "^3.12.0"
+    "ecmarkup": "^7.0.3"
   }
 }
