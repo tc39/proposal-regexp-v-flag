@@ -237,7 +237,7 @@ Instead, we are proposing to reserve doubled ASCII punctuation and symbols for f
 
 ### Does this proposal affect ECMAScript lexing?
 
-It’s an explicit goal of our proposal that a correct ECMAScript lexer before this proposal remains a correct ECMAScript lexer after this proposal.
+No. It’s an explicit goal of our proposal that a correct ECMAScript lexer before this proposal remains a correct ECMAScript lexer after this proposal.
 
 ## TC39 meeting notes
 
