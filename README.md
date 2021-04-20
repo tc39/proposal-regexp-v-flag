@@ -235,9 +235,9 @@ We considered also proposing an operator for symmetric difference (see [issue #5
 
 Instead, we are proposing to reserve doubled ASCII punctuation and symbols for future use. That will allow for future proposals to add `~~` for example, as suggested in [UTS \#18](https://www.unicode.org/reports/tr18/#Subtraction_and_Intersection), for symmetric difference.
 
-### Does this proposal affect JavaScript lexing?
+### Does this proposal affect ECMAScript lexing?
 
-It’s an explicit goal of our proposal that a correct JavaScript lexer before this proposal remains a correct JavaScript lexer after this proposal.
+It’s an explicit goal of our proposal that a correct ECMAScript lexer before this proposal remains a correct ECMAScript lexer after this proposal.
 
 ## TC39 meeting notes
 
