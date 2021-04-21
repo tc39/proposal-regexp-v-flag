@@ -239,11 +239,13 @@ Instead, we are proposing to reserve doubled ASCII punctuation and symbols for f
 
 No. It’s an explicit goal of our proposal that a correct ECMAScript lexer before this proposal remains a correct ECMAScript lexer after this proposal.
 
-## TC39 meeting notes
+## TC39 meeting notes + slides
 
-- [November 2020](https://github.com/tc39/notes/blob/master/meetings/2020-11/nov-18.md#adopting-unicode-behavior-for-set-notation-in-regular-expressions)
-- [January 2021](https://github.com/tc39/notes/blob/master/meetings/2021-01/jan-28.md#regexp-set-notation-for-stage-1)
-- [March 2021](https://github.com/tc39/notes/blob/master/meetings/2021-03/mar-10.md#regexp-set-notation-update)
+- [November 2020](https://github.com/tc39/notes/blob/master/meetings/2020-11/nov-18.md#adopting-unicode-behavior-for-set-notation-in-regular-expressions) ([slides](https://docs.google.com/presentation/d/1kroPvRuQ8DMt6v2XioFmFs23J1drOK7gjPc08owaQOU/edit))
+- [January 2021](https://github.com/tc39/notes/blob/master/meetings/2021-01/jan-28.md#regexp-set-notation-for-stage-1) ([slides](https://docs.google.com/presentation/d/1vXlLpf3mEa_8Y-GDiRKLCqSzNXPOKWCF7tPb0H2M9hk/edit))
+- [March 2021](https://github.com/tc39/notes/blob/master/meetings/2021-03/mar-10.md#regexp-set-notation-update) ([slides](https://docs.google.com/presentation/d/1dWEHdfSsWPwoln5RD2dwnBomIIytX20UFzYSnmRsIPY/edit))
+- April 2021 Incubator Call ([slides](https://docs.google.com/presentation/d/1H2Doh8gbsRCthUoKCgFS-mTKxG2qY0vfC6D0dKvv4kc/edit))
+- April 2021 ([slides](https://docs.google.com/presentation/d/1nV0NHUG5bd201rUSfJinLl8NTmnnyL5gTIhD0llsW1c/edit))
 
 ## Specification
 
