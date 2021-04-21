@@ -235,6 +235,10 @@ We considered also proposing an operator for symmetric difference (see [issue #5
 
 Instead, we are proposing to reserve doubled ASCII punctuation and symbols for future use. That will allow for future proposals to add `~~` for example, as suggested in [UTS \#18](https://www.unicode.org/reports/tr18/#Subtraction_and_Intersection), for symmetric difference.
 
+### Does this proposal affect ECMAScript lexing?
+
+No. It’s an explicit goal of our proposal that a correct ECMAScript lexer before this proposal remains a correct ECMAScript lexer after this proposal.
+
 ## TC39 meeting notes
 
 - [November 2020](https://github.com/tc39/notes/blob/master/meetings/2020-11/nov-18.md#adopting-unicode-behavior-for-set-notation-in-regular-expressions)
