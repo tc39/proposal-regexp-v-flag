@@ -223,7 +223,7 @@ Some Stack Overflow discussions:
 - [#44771741](https://stackoverflow.com/q/44771741/96656)
 - [#55095497](https://stackoverflow.com/q/55095497/96656)
 
-### How does this interact with properties of strings a.k.a. [the sequence properties proposal](https://github.com/tc39/proposal-regexp-unicode-sequence-properties)?
+### How does this interact with [properties of strings a.k.a. the sequence properties proposal](https://github.com/tc39/proposal-regexp-unicode-sequence-properties)?
 
 We commit to describing the exact interactions between the two proposals on the path to stage 2/3. See [issue #3](https://github.com/tc39/proposal-regexp-set-notation/issues/3) for details.
 
