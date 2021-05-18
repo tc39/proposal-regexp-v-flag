@@ -245,10 +245,14 @@ No. It’s an explicit goal of our proposal that a correct ECMAScript lexer befo
 - [January 2021](https://github.com/tc39/notes/blob/master/meetings/2021-01/jan-28.md#regexp-set-notation-for-stage-1) ([slides](https://docs.google.com/presentation/d/1vXlLpf3mEa_8Y-GDiRKLCqSzNXPOKWCF7tPb0H2M9hk/edit))
 - [March 2021](https://github.com/tc39/notes/blob/master/meetings/2021-03/mar-10.md#regexp-set-notation-update) ([slides](https://docs.google.com/presentation/d/1dWEHdfSsWPwoln5RD2dwnBomIIytX20UFzYSnmRsIPY/edit))
 - [April 2021 Incubator Call](https://github.com/tc39/incubator-agendas/blob/master/notes/2021/04-08.md) ([slides](https://docs.google.com/presentation/d/1H2Doh8gbsRCthUoKCgFS-mTKxG2qY0vfC6D0dKvv4kc/edit))
-- April 2021 ([slides](https://docs.google.com/presentation/d/1nV0NHUG5bd201rUSfJinLl8NTmnnyL5gTIhD0llsW1c/edit))
+- [April 2021](https://github.com/tc39/notes/blob/master/meetings/2021-04/apr-20.md#regexp-unicode-set-notation--properties-of-strings-update) ([slides](https://docs.google.com/presentation/d/1nV0NHUG5bd201rUSfJinLl8NTmnnyL5gTIhD0llsW1c/edit))
 
 ## Specification
 
+Temporary:
+* [Google Doc](https://docs.google.com/document/d/1Tbv3hfX9CxQtzH9r-JdxJsQZhmmDsidRUKKxg345JV0/edit?usp=sharing)
+
+TBD:
 * [Ecmarkup source](https://github.com/tc39/proposal-regexp-set-notation/blob/main/spec.html)
 * [HTML version](http://tc39.es/proposal-regexp-set-notation/)
 
