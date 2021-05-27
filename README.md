@@ -9,6 +9,8 @@
 
 This proposal is at stage 2 of [the TC39 process](https://tc39.es/process-document/).
 
+As of the 2021-may-25 TC39 meeting, this proposal officially subsumes the [properties of strings proposal](https://github.com/tc39/proposal-regexp-unicode-sequence-properties).
+
 ## Summary
 
 In ECMAScript regex character classes, we propose to add syntax & semantics for the following set operations:
@@ -16,6 +18,8 @@ In ECMAScript regex character classes, we propose to add syntax & semantics for 
 - difference/subtraction (_in A but not in B_)
 - intersection (_in both A and B_)
 - nested character classes (_needed to enable the above_)
+
+In addition, by merging with the [properties of strings proposal](https://github.com/tc39/proposal-regexp-unicode-sequence-properties), we also propose to add certain Unicode properties of strings, and string literals in character classes.
 
 ## Motivation
 
@@ -182,7 +186,7 @@ We also suggest that the [proposed properties of strings](https://github.com/tc3
 
 In other words, the new flag would indicate several connected changes related to properties and character classes:
 - properties of strings
-- character classes may contain multi-character-string elements
+- character classes may contain multi-character-string elements, via string literals or certain properties
 - nested classes
 - set operators
 - simpler parsing of dashes and square brackets
@@ -227,13 +231,13 @@ Some Stack Overflow discussions:
 
 We described the exact interactions between the two proposals on the path to stage 2. (See [issue #3](https://github.com/tc39/proposal-regexp-set-notation/issues/3) for background.)
 
-We propose to require the new flag in order to enable properties-of-strings as well as allowing new-syntax character classes to contain multi-character-string elements (initially from properties-of-strings used inside a class).
+We propose to require the new flag in order to enable properties-of-strings as well as allowing new-syntax character classes to contain multi-character-string elements (from string literals or properties-of-strings used inside a class).
 
 ### Can a property of strings change into a property of characters, or vice versa?
 
 Short answer: no.
 
-Long answer: we brought this up with the Unicode Technical Committee (UTC) in May 2019 (see [L2/19-168](https://www.unicode.org/cgi-bin/GetMatchingDocs.pl?L2/19-168) + [meeting notes](https://www.unicode.org/L2/L2019/19122.htm#:~:text=45-,B.13.8%20Supporting,Action%20Item%20for,-Mathias)), and later (in April 2021) proposed a concrete new stability policy (see [L2/21-091](https://www.unicode.org/cgi-bin/GetMatchingDocs.pl?L2/21-091) + [meeting notes](https://www.unicode.org/L2/L2021/21066.htm#:~:text=D.2%20Stability,C11%5D%20Consensus)). The UTC reached consensus to approve our proposal. The domain of a normative or informative Unicode property must never change. In particular, a property of characters must never be changed into a property of strings, and vice versa.
+Long answer: We brought this up with the Unicode Technical Committee (UTC) in May 2019 (see [L2/19-168](https://www.unicode.org/cgi-bin/GetMatchingDocs.pl?L2/19-168) + [meeting notes](https://www.unicode.org/L2/L2019/19122.htm#:~:text=45-,B.13.8%20Supporting,Action%20Item%20for,-Mathias)), and later (in April 2021) proposed a concrete new stability policy (see [L2/21-091](https://www.unicode.org/cgi-bin/GetMatchingDocs.pl?L2/21-091) + [meeting notes](https://www.unicode.org/L2/L2021/21066.htm#:~:text=D.2%20Stability,C11%5D%20Consensus)). The UTC reached consensus to approve our proposal. The domain of a normative or informative Unicode property must never change. In particular, a property of characters must never be changed into a property of strings, and vice versa.
 
 ### What about symmetric difference?
 
