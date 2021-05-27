@@ -225,9 +225,15 @@ Some Stack Overflow discussions:
 
 ### How does this interact with [properties of strings a.k.a. the sequence properties proposal](https://github.com/tc39/proposal-regexp-unicode-sequence-properties)?
 
-We commit to describing the exact interactions between the two proposals on the path to stage 2/3. See [issue #3](https://github.com/tc39/proposal-regexp-set-notation/issues/3) for details.
+We described the exact interactions between the two proposals on the path to stage 2. (See [issue #3](https://github.com/tc39/proposal-regexp-set-notation/issues/3) for background.)
 
 We propose to require the new flag in order to enable properties-of-strings as well as allowing new-syntax character classes to contain multi-character-string elements (initially from properties-of-strings used inside a class).
+
+### Can a property of strings change into a property of characters, or vice versa?
+
+Short answer: no.
+
+Long answer: we brought this up with the Unicode Technical Committee (UTC) in May 2019 (see [L2/19-168](https://www.unicode.org/cgi-bin/GetMatchingDocs.pl?L2/19-168) + [meeting notes](https://www.unicode.org/L2/L2019/19122.htm#:~:text=45-,B.13.8%20Supporting,Action%20Item%20for,-Mathias)), and later (in April 2021) proposed a concrete new stability policy (see [L2/21-091](https://www.unicode.org/cgi-bin/GetMatchingDocs.pl?L2/21-091) + [meeting notes](https://www.unicode.org/L2/L2021/21066.htm#:~:text=D.2%20Stability,C11%5D%20Consensus)). The UTC reached consensus to approve our proposal. The domain of a normative or informative Unicode property must never change. In particular, a property of characters must never be changed into a property of strings, and vice versa.
 
 ### What about symmetric difference?
 
