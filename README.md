@@ -1,4 +1,4 @@
-# ECMAScript proposal: set notation in regular expressions
+# ECMAScript proposal: RegExp set notation + properties of strings
 
 ## Authors
 
@@ -264,8 +264,8 @@ Temporary:
 * [Google Doc](https://docs.google.com/document/d/1Tbv3hfX9CxQtzH9r-JdxJsQZhmmDsidRUKKxg345JV0/edit)
 
 TBD:
-* [Ecmarkup source](https://github.com/tc39/proposal-regexp-set-notation/blob/main/spec.html)
-* [HTML version](http://tc39.es/proposal-regexp-set-notation/)
+* [Ecmarkup source](https://github.com/tc39/ecma262/pull/2418)
+* [HTML version](https://arai-a.github.io/ecma262-compare/?pr=2418)
 
 ## Implementations
 
