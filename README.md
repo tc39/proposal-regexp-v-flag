@@ -269,4 +269,4 @@ TBD:
 
 ## Implementations
 
-* none yet
+* [ICU](https://unicode-org.atlassian.net/browse/ICU-21652)
