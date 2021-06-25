@@ -239,6 +239,14 @@ Short answer: no.
 
 Long answer: We brought this up with the Unicode Technical Committee (UTC) in May 2019 (see [L2/19-168](https://www.unicode.org/cgi-bin/GetMatchingDocs.pl?L2/19-168) + [meeting notes](https://www.unicode.org/L2/L2019/19122.htm#:~:text=45-,B.13.8%20Supporting,Action%20Item%20for,-Mathias)), and later (in April 2021) proposed a concrete new stability policy (see [L2/21-091](https://www.unicode.org/cgi-bin/GetMatchingDocs.pl?L2/21-091) + [meeting notes](https://www.unicode.org/L2/L2021/21066.htm#:~:text=D.2%20Stability,C11%5D%20Consensus)). The UTC reached consensus to approve our proposal. The domain of a normative or informative Unicode property must never change. In particular, a property of characters must never be changed into a property of strings, and vice versa.
 
+### What’s the match order for character classes containing strings?
+
+This proposal ensures longest strings are matched first, so that a prefix like `'xy'` does not hide a longer string like `'xyz'`. For example, the pattern `[a-c(W|xy|xyz)]` applies to the strings `'a'`, `'b'`, `'c'`, `'W'`, `'xy'`, and `'xyz'`. This pattern behaves like `xyz|xy|a|b|c|W` or `xyz|xy|[a-cW]`.
+
+Matching the longest strings first is key to the integration with properties of strings like `\p{RGI_Emoji}`. A Unicode property defines a set of characters/strings in the mathematical sense; in particular, no order. Thus, there is no order of the strings in e.g. `[\p{RGI_Emoji}--(🇧🇪)]` that we could preserve.
+
+For more details on the rationale for matching longest strings first, see [issue #25](https://github.com/tc39/proposal-regexp-set-notation/issues/25).
+
 ### What about symmetric difference?
 
 We considered also proposing an operator for symmetric difference (see [issue #5](https://github.com/tc39/proposal-regexp-set-notation/issues/5)), but we did not find a good use case and wanted to keep the proposal simple.
