@@ -269,12 +269,15 @@ No. It’s an explicit goal of our proposal that a correct ECMAScript lexer befo
 ## Specification
 
 Temporary:
-* [Google Doc](https://docs.google.com/document/d/1Tbv3hfX9CxQtzH9r-JdxJsQZhmmDsidRUKKxg345JV0/edit)
+- [Google Doc](https://docs.google.com/document/d/1Tbv3hfX9CxQtzH9r-JdxJsQZhmmDsidRUKKxg345JV0/edit)
 
 TBD:
-* [Ecmarkup source](https://github.com/tc39/ecma262/pull/2418)
-* [HTML version](https://arai-a.github.io/ecma262-compare/?pr=2418)
+- [Ecmarkup source](https://github.com/tc39/ecma262/pull/2418)
+- [HTML version](https://arai-a.github.io/ecma262-compare/?pr=2418)
 
 ## Implementations
 
-* [ICU](https://unicode-org.atlassian.net/browse/ICU-21652)
+- [SpiderMonkey/Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1713657)
+- [V8/Chrome](https://bugs.chromium.org/p/v8/issues/detail?id=11935)
+- JavaScriptCore/Safari
+- [ICU](https://unicode-org.atlassian.net/browse/ICU-21652)
