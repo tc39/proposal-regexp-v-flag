@@ -247,6 +247,16 @@ Matching the longest strings first is key to the integration with properties of 
 
 For more details on the rationale for matching longest strings first, see [issue #25](https://github.com/tc39/proposal-regexp-set-notation/issues/25).
 
+### How does subtraction behave in the case of `A--B` where `B` is not a proper subset of `A`?
+
+As mentioned in the answer to the previous question, according to both the current ECMAScript specification and other regular expression implementations, **character classes are mathematical sets**. As such, the removal of strings that are not present in the original set is not an error, but rather a no-op. Example using a hypothetical property of strings named `SomePropertyOfStrings` which does not include the string `foo`:
+
+```
+[\p{SomePropertyOfStrings}--(foo)]
+```
+
+Several of [the real-world illustrative examples in this explainer](https://github.com/tc39/proposal-regexp-set-notation#illustrative-examples) rely on this useful pattern, and it is crucial that we support it. [See issue #32 for more background.](https://github.com/tc39/proposal-regexp-set-notation/issues/32)
+
 ### What about symmetric difference?
 
 We considered also proposing an operator for symmetric difference (see [issue #5](https://github.com/tc39/proposal-regexp-set-notation/issues/5)), but we did not find a good use case and wanted to keep the proposal simple.
