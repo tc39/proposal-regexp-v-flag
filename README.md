@@ -249,13 +249,18 @@ For more details on the rationale for matching longest strings first, see [issue
 
 ### How does subtraction behave in the case of `A--B` where `B` is not a proper subset of `A`?
 
-As mentioned in the answer to the previous question, according to both the current ECMAScript specification and other regular expression implementations, **character classes are mathematical sets**. As such, the removal of strings that are not present in the original set is not an error, but rather a no-op. Example using a hypothetical property of strings named `SomePropertyOfStrings` which does not include the string `foo`:
+As mentioned in the answer to the previous question, according to both the current ECMAScript specification and other regular expression implementations, **character classes are mathematical sets**. As such, the removal of strings that are not present in the original set is not an error, but rather a no-op. Example (note that `RGI_Emoji` includes the string `🇧🇪`, but `RGI_Emoji_ZWJ_Sequence` does not):
 
 ```
-[\p{SomePropertyOfStrings}--(foo)]
+# Proper subset.
+[\p{RGI_Emoji}--(🇧🇪)]
+# Not a proper subset.
+[\p{RGI_Emoji_ZWJ_Sequence}--(🇧🇪)]
 ```
 
-Several of [the real-world illustrative examples in this explainer](https://github.com/tc39/proposal-regexp-set-notation#illustrative-examples) rely on this useful pattern, and it is crucial that we support it. [See issue #32 for more background.](https://github.com/tc39/proposal-regexp-set-notation/issues/32)
+It would be confusing and counterproductive if one of these patterns threw an exception.
+
+Several of [the real-world illustrative examples in this explainer](https://github.com/tc39/proposal-regexp-set-notation#illustrative-examples) rely on this useful `A--B` pattern, and it is crucial that we support it. [See issue #32 for more background.](https://github.com/tc39/proposal-regexp-set-notation/issues/32)
 
 ### What about symmetric difference?
 
