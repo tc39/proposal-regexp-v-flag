@@ -239,6 +239,20 @@ Short answer: no.
 
 Long answer: We brought this up with the Unicode Technical Committee (UTC) in May 2019 (see [L2/19-168](https://www.unicode.org/cgi-bin/GetMatchingDocs.pl?L2/19-168) + [meeting notes](https://www.unicode.org/L2/L2019/19122.htm#:~:text=45-,B.13.8%20Supporting,Action%20Item%20for,-Mathias)), and later (in April 2021) proposed a concrete new stability policy (see [L2/21-091](https://www.unicode.org/cgi-bin/GetMatchingDocs.pl?L2/21-091) + [meeting notes](https://www.unicode.org/L2/L2021/21066.htm#:~:text=D.2%20Stability,C11%5D%20Consensus)). The UTC reached consensus to approve our proposal. The domain of a normative or informative Unicode property must never change. In particular, a property of characters must never be changed into a property of strings, and vice versa.
 
+### Can a property or character class match an infinite set of strings?
+
+Short answer: no.
+
+This proposal, just like the original [properties of strings proposal](https://github.com/tc39/proposal-regexp-unicode-sequence-properties), adds support for certain properties of strings, each of which expands to a finite, well-defined set of strings (`Basic_Emoji` also applies to many single characters); and this proposal adds syntax for character classes with explicitly enumerated strings, which also creates a finite set. This is a natural extension from finite properties of characters and finite character classes/sets of characters.
+
+For example, in UTS \#51 there is a very clear distinction between
+1. an [emoji zwj sequence](https://www.unicode.org/reports/tr51/#def_emoji_zwj_sequence), *defined via a regular expression* that matches an infinite set of strings
+2. the [RGI emoji ZWJ sequence set](https://www.unicode.org/reports/tr51/#def_emoji_ZWJ_sequences) (= the RGI_Emoji_ZWJ_Sequence property) which is a *finite set of strings listed in a data file*
+
+It is theoretically possible to support named matchers for infinite sets of strings, that is, a kind of named sub-regular-expression. *That is decidedly not part of this proposal,* nor is any speculation about possible syntax and semantics of such hypothetical expressions part of this proposal.
+
+There is enough reserved syntax (e.g., curly braces) to enable wide-ranging extensions in the future, but we don’t plan to build something specific into the proposed spec changes.
+
 ### What’s the match order for character classes containing strings?
 
 This proposal ensures longest strings are matched first, so that a prefix like `'xy'` does not hide a longer string like `'xyz'`. For example, the pattern `[a-c(W|xy|xyz)]` applies to the strings `'a'`, `'b'`, `'c'`, `'W'`, `'xy'`, and `'xyz'`. This pattern behaves like `xyz|xy|a|b|c|W` or `xyz|xy|[a-cW]`.
