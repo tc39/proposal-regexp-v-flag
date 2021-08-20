@@ -164,16 +164,17 @@ We considered 4 options:
   - (Banning the use of unknown escape sequences in `u` RegExps was [a conscious choice](https://web.archive.org/web/20141214085510/https://bugs.ecmascript.org/show_bug.cgi?id=3157), made to enable this kind of extension.)
 - A prefix like [`(?[`](https://github.com/tc39/proposal-regexp-set-notation/issues/39) that is not valid in existing patterns _regardless of flags_.
 
-The prefix was suggested in an early TC39 meeting, so we were working with variations of that, for example:
+The idea to use a prefix was suggested in an early TC39 meeting, so we were working with variations of that, for example:
+
 ```
 UnicodeCharacterClass = '\UniSet{' ClassContents '}'
 ```
 
 However, we found that this is not very developer-friendly.
 
-In particular, one would have to write the prefix **and** use the `u` flag. Waldemar pointed out that the prefix *looks like* it should be enough, and therefore a developer may well accidentally omit adding the `u` flag.
+In particular, one would have to write the prefix **and** use the `u` flag. Waldemar pointed out that the prefix *looks like* it should be enough, and therefore a developer may well accidentally omit adding the `u` flag. Although this aspect could be addressed by using a more complicated prefix that is currently invalid with and without the `u` flag (like `(?[`), doing so would come at the cost of readability.
 
-Also, the use of a backslash-letter prefix would want to enclose the new syntax in `{curly braces}` because other such syntax (`\p{property}`, `\u{12345}`, ...) uses curly braces – but not using `[square brackets]` for the outermost level of a character class looks strange.
+Also, the use of a backslash-letter prefix would want to enclose the new syntax in `{curly braces}` because other such syntax (`\p{property}`, `\u{12345}`, …) uses curly braces – but not using `[square brackets]` for the outermost level of a character class looks strange.
 
 Finally, when an expression has several new-syntax character classes, the prefix would have to be used on each one, which is clunky.
 
