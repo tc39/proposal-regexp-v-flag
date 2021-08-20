@@ -157,11 +157,12 @@ Real-world usage examples from code using ICU’s `UnicodeSet` which implements 
 
 It is an explicit goal of this proposal to not break backwards compatibility. Concretely, we don’t want to change behavior of any regular expression pattern that currently does not throw an exception. There needs to be some way to indicate that the new syntax is in use.
 
-We considered 3 options:
+We considered 4 options:
 - A new flag outside the expression itself.
 - A modifier inside the expression, of the form `(?L)` where `L` is one ASCII letter. (Several regex engines support various modifiers like this.)
-- A prefix like `\U...` that is not valid under the current `u` flag (Unicode mode) – but note that `\U` without the `u` flag is just the same as `U` itself.
+- A prefix like `\U…` that is not valid under the current `u` flag (Unicode mode) – but note that `\U` without the `u` flag is just the same as `U` itself.
   - (Banning the use of unknown escape sequences in `u` RegExps was [a conscious choice](https://web.archive.org/web/20141214085510/https://bugs.ecmascript.org/show_bug.cgi?id=3157), made to enable this kind of extension.)
+- A prefix like [`(?[`](https://github.com/tc39/proposal-regexp-set-notation/issues/39) that is not valid in existing patterns _regardless of flags_.
 
 The prefix was suggested in an early TC39 meeting, so we were working with variations of that, for example:
 ```
@@ -170,7 +171,7 @@ UnicodeCharacterClass = '\UniSet{' ClassContents '}'
 
 However, we found that this is not very developer-friendly.
 
-In particular, one would have to write the prefix **and** use the ‘u’ flag. Waldemar pointed out that the prefix *looks like* it should be enough, and therefore a developer may well accidentally omit adding the `u` flag.
+In particular, one would have to write the prefix **and** use the `u` flag. Waldemar pointed out that the prefix *looks like* it should be enough, and therefore a developer may well accidentally omit adding the `u` flag.
 
 Also, the use of a backslash-letter prefix would want to enclose the new syntax in `{curly braces}` because other such syntax (`\p{property}`, `\u{12345}`, ...) uses curly braces – but not using `[square brackets]` for the outermost level of a character class looks strange.
 
