@@ -257,9 +257,9 @@ There is enough reserved syntax (e.g., curly braces) to enable wide-ranging exte
 
 ### What’s the match order for character classes containing strings?
 
-This proposal ensures longest strings are matched first, so that a prefix like `'xy'` does not hide a longer string like `'xyz'`. For example, the pattern `[a-c(W|xy|xyz)]` applies to the strings `'a'`, `'b'`, `'c'`, `'W'`, `'xy'`, and `'xyz'`. This pattern behaves like `xyz|xy|a|b|c|W` or `xyz|xy|[a-cW]`.
+This proposal ensures longest strings are matched first, so that a prefix like `'xy'` does not hide a longer string like `'xyz'`. For example, the pattern `[a-c\q{W|xy|xyz}]` applies to the strings `'a'`, `'b'`, `'c'`, `'W'`, `'xy'`, and `'xyz'`. This pattern behaves like `xyz|xy|a|b|c|W` or `xyz|xy|[a-cW]`.
 
-Matching the longest strings first is key to the integration with properties of strings like `\p{RGI_Emoji}`. A Unicode property defines a set of characters/strings in the mathematical sense; in particular, no order. Thus, there is no order of the strings in e.g. `[\p{RGI_Emoji}--(🇧🇪)]` that we could preserve.
+Matching the longest strings first is key to the integration with properties of strings like `\p{RGI_Emoji}`. A Unicode property defines a set of characters/strings in the mathematical sense; in particular, no order. Thus, there is no order of the strings in e.g. `[\p{RGI_Emoji}--\q{🇧🇪}]` that we could preserve.
 
 For more details on the rationale for matching longest strings first, see [issue #25](https://github.com/tc39/proposal-regexp-set-notation/issues/25).
 
@@ -269,9 +269,9 @@ As mentioned in the answer to the previous question, according to both the curre
 
 ```
 # Proper subset.
-[\p{RGI_Emoji}--(🇧🇪)]
+[\p{RGI_Emoji}--\q{🇧🇪}]
 # Not a proper subset.
-[\p{RGI_Emoji_ZWJ_Sequence}--(🇧🇪)]
+[\p{RGI_Emoji_ZWJ_Sequence}--\q{🇧🇪}]
 ```
 
 It would be confusing and counterproductive if one of these patterns threw an exception.
