@@ -300,12 +300,10 @@ No. It’s an explicit goal of our proposal that a correct ECMAScript lexer befo
 
 ## Specification
 
-Temporary:
-- [Google Doc](https://docs.google.com/document/d/1Tbv3hfX9CxQtzH9r-JdxJsQZhmmDsidRUKKxg345JV0/edit)
-
-TBD:
 - [Ecmarkup source](https://github.com/tc39/ecma262/pull/2418)
 - [HTML version](https://arai-a.github.io/ecma262-compare/?pr=2418)
+
+(We developed the draft spec changes in a [Google Doc](https://docs.google.com/document/d/1Tbv3hfX9CxQtzH9r-JdxJsQZhmmDsidRUKKxg345JV0/edit), but all of the changes from there are now in the pull request. There are just a few discussion threads left in the doc that we will resolve. Please review the pull request and the HTML diffs.)
 
 ## Implementations
 
