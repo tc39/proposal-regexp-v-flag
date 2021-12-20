@@ -192,6 +192,7 @@ In other words, the new flag would indicate several connected changes related to
 - nested classes
 - set operators
 - simpler parsing of dashes and square brackets
+- [fixed/improved IgnoreCase matching](https://github.com/tc39/proposal-regexp-set-notation/issues/30)
 
 For more discussion see [issue 2](https://github.com/tc39/proposal-regexp-set-notation/issues/2).
 
