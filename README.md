@@ -262,6 +262,19 @@ Matching the longest strings first is key to the integration with properties of 
 
 For more details on the rationale for matching longest strings first, see [issue #25](https://github.com/tc39/proposal-regexp-set-notation/issues/25).
 
+### Are properties of strings eager / atomic?
+
+No. As shown in the previous FAQ entry, `\p{PropertyOfStrings}` desugars into a plain disjunction, rather than an [atomic group](https://www.regular-expressions.info/atomic.html) containing a disjunction. We believe this behavior is the most future-proof, for the following reasons.
+
+If, as part of a separate proposal, atomic groups are added to ECMAScript following the syntactic precedent in other languages, users can make their own choices, i.e.
+
+- use `(?>\p{PropertyOfStrings})` if atomic behavior is desired
+- use `\p{PropertyOfStrings}` if non-atomic behavior is desired
+
+If, on the other hand, we forced properties of strings to be atomic, there’d be no way for users to opt-out of the atomic behavior without inventing a new “non-atomic” non-atomic regular expression operator for which no predecent exists in other regular expression flavors.
+
+See [issue #50](https://github.com/tc39/proposal-regexp-set-notation/issues/50) for details.
+
 ### How does subtraction behave in the case of `A--B` where `B` is not a proper subset of `A`?
 
 As mentioned in the answer to the previous question, according to both the current ECMAScript specification and other regular expression implementations, **character classes are mathematical sets**. As such, the removal of strings that are not present in the original set is not an error, but rather a no-op. Example (note that `RGI_Emoji` includes the string `🇧🇪`, but `RGI_Emoji_ZWJ_Sequence` does not):
