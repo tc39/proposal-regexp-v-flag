@@ -40,8 +40,6 @@ We propose to extend the syntax for character classes to add support for set dif
 ## High-level API
 
 Within regular expression patterns, we propose enabling the following functionality.
-We have not yet settled on several issues including single vs. double punctuation,
-some distinct prefix to not break existing expressions (see FAQ), etc.
 
 ```
 // difference/subtraction
