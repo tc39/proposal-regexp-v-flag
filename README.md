@@ -296,7 +296,7 @@ No. It’s an explicit goal of our proposal that a correct ECMAScript lexer befo
 - [April 2021](https://github.com/tc39/notes/blob/master/meetings/2021-04/apr-20.md#regexp-unicode-set-notation--properties-of-strings-update) ([slides](https://docs.google.com/presentation/d/1nV0NHUG5bd201rUSfJinLl8NTmnnyL5gTIhD0llsW1c/edit))
 - [May 2021](https://github.com/tc39/notes/blob/master/meetings/2021-05/may-26.md#regexp-unicode-set-notation--properties-of-strings-for-stage-2) ([slides](https://docs.google.com/presentation/d/1nb_6ZcAjG4AKwVrwpalu1Ep-h7TONxoSm-uxKx83Wik/edit))
 - [August 2021](https://github.com/tc39/notes/blob/master/meetings/2021-08/aug-31.md#regexp-set-notation--properties-of-strings) ([slides](https://docs.google.com/presentation/d/1foloLW13Elu0kslVsmD1hR_qZQBn8INcNpdWl0rlHrI/edit))
-- December 2021: TODO
+- December 2021: TODO ([slides](https://docs.google.com/presentation/d/14AWHZvUeaKNHh_b_1xyqVlnDlYW8fWC4Lfgr0lHf2W4/edit))
 
 ## Specification
 
