@@ -271,7 +271,7 @@ If, as part of a separate proposal, atomic groups are added to ECMAScript follow
 - use `(?>\p{PropertyOfStrings})` if atomic behavior is desired
 - use `\p{PropertyOfStrings}` if non-atomic behavior is desired
 
-If, on the other hand, we forced properties of strings to be atomic, there’d be no way for users to opt-out of the atomic behavior without inventing a new “non-atomic” non-atomic regular expression operator for which no predecent exists in other regular expression flavors.
+If, on the other hand, we forced properties of strings to be atomic, there’d be no way for users to opt-out of the atomic behavior without inventing a new “non-atomic” regular expression operator for which no precedent exists in other regular expression flavors.
 
 See [issue #50](https://github.com/tc39/proposal-regexp-set-notation/issues/50) for details.
 
