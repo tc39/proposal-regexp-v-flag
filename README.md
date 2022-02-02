@@ -324,3 +324,4 @@ No. It’s an explicit goal of our proposal that a correct ECMAScript lexer befo
 - [V8/Chrome](https://bugs.chromium.org/p/v8/issues/detail?id=11935)
 - JavaScriptCore/Safari
 - [ICU](https://unicode-org.atlassian.net/browse/ICU-21652)
+- [Babel](https://babeljs.io/blog/2022/02/02/7.17.0) via [regexpu-core](https://github.com/mathiasbynens/regexpu-core)
