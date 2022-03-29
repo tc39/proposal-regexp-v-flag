@@ -7,7 +7,7 @@
 
 ## Status
 
-This proposal is at stage 2 of [the TC39 process](https://tc39.es/process-document/).
+This proposal is at stage 3 of [the TC39 process](https://tc39.es/process-document/) as of the 2022-mar-29 meeting.
 
 As of the 2021-may-25 TC39 meeting, this proposal officially subsumes the [properties of strings proposal](https://github.com/tc39/proposal-regexp-unicode-sequence-properties).
 
