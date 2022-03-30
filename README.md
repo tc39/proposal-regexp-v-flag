@@ -262,6 +262,8 @@ Matching the longest strings first is key to the integration with properties of 
 
 For more details on the rationale for matching longest strings first, see [issue #25](https://github.com/tc39/proposal-regexp-set-notation/issues/25).
 
+A character class may contain multiple strings of the same length: e.g. `[xyz]` contains three strings consisting of a single character, and `[\q{xx|yy|zz}]` (using the new string literal syntax) contains three strings consisting of two characters. There is no inherent or observable match order for those same-length strings. The committee [discussed](https://github.com/tc39/proposal-regexp-set-notation/issues/55) and decided that character classes are mathematical sets with no inherent order. Similar to how there is no observable match order difference between `[xyz]` and `[zyx]`, there is no match order difference between `[\q{xx|yy|zz}]` and `[\q{zz|yy|xx}]`. This nuance enables implementers to use sets (i.e. implementations of mathematical sets) and tries (retrieval trees) for runtime optimizations.
+
 ### Are properties of strings eager / atomic?
 
 No. As shown in the previous FAQ entry, `\p{PropertyOfStrings}` desugars into a plain disjunction, rather than an [atomic group](https://www.regular-expressions.info/atomic.html) containing a disjunction. We believe this behavior is the most future-proof, for the following reasons.
