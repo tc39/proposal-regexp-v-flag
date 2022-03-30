@@ -1,4 +1,4 @@
-# ECMAScript proposal: RegExp set notation + properties of strings
+# ECMAScript proposal: RegExp `v` flag with set notation + properties of strings
 
 ## Authors
 
