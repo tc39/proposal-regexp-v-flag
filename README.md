@@ -238,7 +238,7 @@ The answer to this question can be useful when “upgrading” existing `u` RegE
     [~~]
     ```
 
-- The `u` flag suffers from confusing case-insensitive matching behavior. The `v` flag has different, improved semantics. See [issue #30](https://github.com/tc39/proposal-regexp-set-notation/issues/30) for details.
+1. The `u` flag suffers from confusing case-insensitive matching behavior. The `v` flag has different, improved semantics. See [issue #30](https://github.com/tc39/proposal-regexp-set-notation/issues/30) for details.
 
 ### What’s the precedent in other RegExp flavors?
 
