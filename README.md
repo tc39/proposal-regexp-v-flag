@@ -198,7 +198,7 @@ For more discussion see [issue 2](https://github.com/tc39/proposal-regexp-set-no
 
 The answer to this question can be useful when “upgrading” existing `u` RegExps to use `v`. Here’s an overview of the differences:
 
-1. Previously invalid patterns making use of the new syntax (see above) now become valid, e.g.
+1. (This is the obvious part.) Previously invalid patterns making use of the new syntax (see above) now become valid, e.g.
 
     ```
     [\p{ASCII_Hex_Digit}--[Ff]]
