@@ -194,6 +194,52 @@ In other words, the new flag would indicate several connected changes related to
 
 For more discussion see [issue 2](https://github.com/tc39/proposal-regexp-set-notation/issues/2).
 
+### How is the `v` flag different from the `u` flag?
+
+The answer to this question can be useful when “upgrading” existing `u` RegExps to use `v`. Here’s an overview of the differences:
+
+1. Previously invalid patterns making use of the new syntax (see above) now become valid, e.g.
+
+    ```
+    [\p{ASCII_Hex_Digit}--[Ff]]
+    \p{RGI_Emoji}
+    [_\q{a|bc|def}]
+    ```
+
+- Some previously valid patterns are now errors, specifically those with a character class including either an unescaped [special character](https://arai-a.github.io/ecma262-compare/snapshot.html?pr=2418#prod-ClassSetSyntaxCharacter) `(` `)` `[` `]` `{` `}` `/` `-` `\` `|` or [a double punctuator](https://arai-a.github.io/ecma262-compare/snapshot.html?pr=2418#prod-ClassSetReservedDoublePunctuator):
+
+    ```
+    [(]
+    [)]
+    [[]
+    [{]
+    [}]
+    [/]
+    [-]
+    [|]
+    [&&]
+    [!!]
+    [##]
+    [$$]
+    [%%]
+    [**]
+    [++]
+    [,,]
+    [..]
+    [::]
+    [;;]
+    [<<]
+    [==]
+    [>>]
+    [??]
+    [@@]
+    [^^]
+    [``]
+    [~~]
+    ```
+
+- The `u` flag suffers from confusing case-insensitive matching behavior. The `v` flag has different, improved semantics. See [issue #30](https://github.com/tc39/proposal-regexp-set-notation/issues/30) for details.
+
 ### What’s the precedent in other RegExp flavors?
 
 Several other regex engines support some or all of the proposed extensions in some form:
