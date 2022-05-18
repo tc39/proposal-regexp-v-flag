@@ -111,7 +111,7 @@ Real-world usage examples from code using ICU’s `UnicodeSet` which implements 
 - All Greek code points that are either a letter, a mark (e.g. diacritic), or a decimal number:
 
     ```
-    [\p{Greek}&&[\p{Letter}\p{Mark}\p{Decimal_Number}]]
+    [\p{Script_Extensions=Greek}&&[\p{Letter}\p{Mark}\p{Decimal_Number}]]
     ```
 
 - All code points, except for those in the “Other” `General_Category`, but add back control characters:
