@@ -206,7 +206,7 @@ The answer to this question can be useful when “upgrading” existing `u` RegE
     [_\q{a|bc|def}]
     ```
 
-1. Some previously valid patterns are now errors, specifically those with a character class including either an unescaped [special character](https://arai-a.github.io/ecma262-compare/snapshot.html?pr=2418#prod-ClassSetSyntaxCharacter) `(` `)` `[` `{` `}` `/` `|` (note: `\` and `]` and `-` are omitted from this list since they require escaping with the `u` flag already) or [a double punctuator](https://arai-a.github.io/ecma262-compare/snapshot.html?pr=2418#prod-ClassSetReservedDoublePunctuator):
+1. Some previously valid patterns are now errors, specifically those with a character class including either an unescaped [special character](https://arai-a.github.io/ecma262-compare/snapshot.html?pr=2418#prod-ClassSetSyntaxCharacter) `(` `)` `[` `{` `}` `/` `-` `|` (note: `\` and `]` also require escaping inside a character class, but this is already true with the `u` flag) or [a double punctuator](https://arai-a.github.io/ecma262-compare/snapshot.html?pr=2418#prod-ClassSetReservedDoublePunctuator):
 
     ```
     [(]
