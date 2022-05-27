@@ -314,7 +314,7 @@ A character class may contain multiple strings of the same length: e.g. `[xyz]` 
 
 No. As shown in the previous FAQ entry, `\p{PropertyOfStrings}` desugars into a plain disjunction, rather than an [atomic group](https://www.regular-expressions.info/atomic.html) containing a disjunction. We believe this behavior is the most future-proof, for the following reasons.
 
-If, as part of a separate proposal, atomic groups are added to ECMAScript following the syntactic precedent in other languages, users can make their own choices, i.e.
+If, as part of a separate proposal, [atomic groups](https://github.com/rbuckton/proposal-regexp-atomic-operators) are added to ECMAScript following the syntactic precedent in other languages, users can make their own choices, i.e.
 
 - use `(?>\p{PropertyOfStrings})` if atomic behavior is desired
 - use `\p{PropertyOfStrings}` if non-atomic behavior is desired
