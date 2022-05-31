@@ -372,5 +372,5 @@ No. It’s an explicit goal of our proposal that a correct ECMAScript lexer befo
 - [SpiderMonkey/Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1713657)
 - [V8/Chrome](https://bugs.chromium.org/p/v8/issues/detail?id=11935)
 - JavaScriptCore/Safari
-- [ICU](https://unicode-org.atlassian.net/browse/ICU-21652)
+- [ICU class UnicodeSet](https://unicode-org.github.io/icu/userguide/strings/unicodeset.html) can be built from a string with syntax like a regular expression character class. UnicodeSet has long supported set operations and multi-character strings, and recently ([in ICU 70](https://unicode-org.atlassian.net/browse/ICU-21652)) added support for emoji properties of strings.
 - [Babel](https://babeljs.io/blog/2022/02/02/7.17.0) via [regexpu-core](https://github.com/mathiasbynens/regexpu-core)
