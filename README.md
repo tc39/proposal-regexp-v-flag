@@ -21,6 +21,8 @@ In ECMAScript regex character classes, we propose to add syntax & semantics for 
 
 In addition, by merging with the [properties of strings proposal](https://github.com/tc39/proposal-regexp-unicode-sequence-properties), we also propose to add certain Unicode properties of strings, and string literals in character classes.
 
+For a JavaScript developer-facing explanation of this proposal, [see our feature article on v8.dev](https://v8.dev/features/regexp-v-flag).
+
 ## Motivation
 
 Many regular expression engines support named character properties, mostly reflecting Unicode character properties, to avoid hardcoding character classes that may require hundreds of ranges and that may change with new versions of Unicode.
