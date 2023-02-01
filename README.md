@@ -369,6 +369,8 @@ No. It’s an explicit goal of our proposal that a correct ECMAScript lexer befo
 
 (We developed the draft spec changes in a [Google Doc](https://docs.google.com/document/d/1Tbv3hfX9CxQtzH9r-JdxJsQZhmmDsidRUKKxg345JV0/edit), but all of the changes from there are now in the pull request. There are just a few discussion threads left in the doc that we will resolve. Please review the pull request and the HTML diffs.)
 
+Integration with the `pattern` attribute in the HTML Standard: https://github.com/whatwg/html/pull/7908
+
 ## Implementations
 
 - [SpiderMonkey/Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1713657)
