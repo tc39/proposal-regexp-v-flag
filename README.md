@@ -235,9 +235,10 @@ The answer to this question can be useful when “upgrading” existing `u` RegE
     [>>]
     [??]
     [@@]
-    [^^]
     [``]
     [~~]
+    [^^^]
+    [_^^]
     ```
 
 1. The `u` flag suffers from confusing case-insensitive matching behavior. The `v` flag has different, improved semantics. See [the explainer](https://v8.dev/features/regexp-v-flag#ignoreCase) for an overview, or [issue #30](https://github.com/tc39/proposal-regexp-set-notation/issues/30) for more details.
