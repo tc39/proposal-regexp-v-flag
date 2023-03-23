@@ -376,7 +376,7 @@ Integration with the `pattern` attribute in the HTML Standard: https://github.co
 
 - [SpiderMonkey/Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1713657)
 - [V8/Chrome](https://bugs.chromium.org/p/v8/issues/detail?id=11935), enabled by default in V8 v11.2 / Chrome 112 (behind the `--harmony-regexp-unicode-sets` flag in earlier versions)
-- [JavaScriptCore/Safari](https://bugs.webkit.org/show_bug.cgi?id=241593)
+- [JavaScriptCore/Safari](https://bugs.webkit.org/show_bug.cgi?id=241593), enabled by default in [Safari Technology Preview 166](https://webkit.org/blog/13964/release-notes-for-safari-technology-preview-166/)
 - [Babel](https://babeljs.io/blog/2022/02/02/7.17.0) via [regexpu-core](https://github.com/mathiasbynens/regexpu-core)
 - [ICU class UnicodeSet](https://unicode-org.github.io/icu/userguide/strings/unicodeset.html) can be built from a string with syntax like a regular expression character class. UnicodeSet has long supported set operations and multi-character strings, and recently ([in ICU 70](https://unicode-org.atlassian.net/browse/ICU-21652)) added support for emoji properties of strings.
 - [C++ SRELL (`std::regex`-like library)](https://www.akenotsuki.com/misc/srell/en/#ecmascript_regexp)
