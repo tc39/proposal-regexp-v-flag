@@ -375,7 +375,7 @@ Integration with the `pattern` attribute in the HTML Standard: https://github.co
 
 ## Implementations
 
-- [SpiderMonkey/Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1713657)
+- [SpiderMonkey/Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1713657), shipping in Firefox 116
 - [V8/Chrome](https://bugs.chromium.org/p/v8/issues/detail?id=11935), enabled by default in V8 v11.2 / Chrome 112 (behind the `--harmony-regexp-unicode-sets` flag in earlier versions)
 - [JavaScriptCore/Safari](https://bugs.webkit.org/show_bug.cgi?id=241593), enabled by default in [Safari Technology Preview 166](https://webkit.org/blog/13964/release-notes-for-safari-technology-preview-166/)
 - [Babel](https://babeljs.io/blog/2022/02/02/7.17.0) via [regexpu-core](https://github.com/mathiasbynens/regexpu-core)
