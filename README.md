@@ -362,7 +362,7 @@ No. It’s an explicit goal of our proposal that a correct ECMAScript lexer befo
 - [August 2021](https://github.com/tc39/notes/blob/master/meetings/2021-08/aug-31.md#regexp-set-notation--properties-of-strings) ([slides](https://docs.google.com/presentation/d/1foloLW13Elu0kslVsmD1hR_qZQBn8INcNpdWl0rlHrI/edit))
 - [December 2021](https://github.com/tc39/notes/blob/master/meetings/2021-12/dec-14.md#regexp-set-notation--unicode-properties-of-strings-ready-for-stage-3-reviews) ([slides](https://docs.google.com/presentation/d/14AWHZvUeaKNHh_b_1xyqVlnDlYW8fWC4Lfgr0lHf2W4/edit))
 - [March 2022](https://github.com/tc39/notes/blob/main/meetings/2022-03/mar-29.md#regexp-set-notation--unicode-properties-of-strings-for-stage-3) ([slides](https://docs.google.com/presentation/d/1_rcjmR2YLZMMB0i4SdZ4RV6eiJB7WmXo_i82_nh7vNg/edit))
-- May 2023 ([slides](https://docs.google.com/presentation/d/1pjP06RhOAbYlh-6rYhe3v1SsxD2qLpiWAC2dKDBSJZo/edit))
+- [May 2023](https://github.com/tc39/notes/blob/main/meetings/2023-05/may-16.md#regexp-v-flag-for-stage-4) ([slides](https://docs.google.com/presentation/d/1pjP06RhOAbYlh-6rYhe3v1SsxD2qLpiWAC2dKDBSJZo/edit))
 
 ## Specification
 
