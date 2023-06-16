@@ -381,3 +381,9 @@ Integration with the `pattern` attribute in the HTML Standard: https://github.co
 - [Babel](https://babeljs.io/blog/2022/02/02/7.17.0) via [regexpu-core](https://github.com/mathiasbynens/regexpu-core)
 - [ICU class UnicodeSet](https://unicode-org.github.io/icu/userguide/strings/unicodeset.html) can be built from a string with syntax like a regular expression character class. UnicodeSet has long supported set operations and multi-character strings, and recently ([in ICU 70](https://unicode-org.atlassian.net/browse/ICU-21652)) added support for emoji properties of strings.
 - [C++ SRELL (`std::regex`-like library)](https://www.akenotsuki.com/misc/srell/en/#ecmascript_regexp)
+
+Support for [the `v` flag in the HTML `pattern` attribute](https://github.com/whatwg/html/pull/7908) is available in:
+
+- [Chrome 114](https://bugs.chromium.org/p/chromium/issues/detail?id=1412729)
+- [Firefox 116](https://bugzilla.mozilla.org/show_bug.cgi?id=pattern-v)
+- [Safari 17](https://bugs.webkit.org/show_bug.cgi?id=pattern-v)
