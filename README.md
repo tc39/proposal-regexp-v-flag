@@ -7,7 +7,7 @@
 
 ## Status
 
-This proposal is at stage 4 of [the TC39 process](https://tc39.es/process-document/) as of the 2023-may-16 meeting.
+This proposal reached stage 4 of [the TC39 process](https://tc39.es/process-document/) during the 2023-may-16 meeting. It was [merged](https://github.com/tc39/ecma262/pull/2418) into [the ECMAScript spec](https://tc39.es/ecma262/) on 2023-jun-15, on track for inclusion in the ECMAScript 2024 snapshot.
 
 As of the 2021-may-25 TC39 meeting, this proposal officially subsumes the [properties of strings proposal](https://github.com/tc39/proposal-regexp-unicode-sequence-properties).
 
@@ -369,7 +369,7 @@ No. It’s an explicit goal of our proposal that a correct ECMAScript lexer befo
 - [Ecmarkup source](https://github.com/tc39/ecma262/pull/2418)
 - [HTML version](https://arai-a.github.io/ecma262-compare/?pr=2418)
 
-(We developed the draft spec changes in a [Google Doc](https://docs.google.com/document/d/1Tbv3hfX9CxQtzH9r-JdxJsQZhmmDsidRUKKxg345JV0/edit), but all of the changes from there are now in the pull request. There are just a few discussion threads left in the doc that we will resolve. Please review the pull request and the HTML diffs.)
+(We initially developed the draft spec changes in a [Google Doc](https://docs.google.com/document/d/1Tbv3hfX9CxQtzH9r-JdxJsQZhmmDsidRUKKxg345JV0/edit), but later moved all of the changes from there to the pull request.)
 
 Integration with the `pattern` attribute in the HTML Standard: https://github.com/whatwg/html/pull/7908
 
@@ -377,7 +377,7 @@ Integration with the `pattern` attribute in the HTML Standard: https://github.co
 
 - [SpiderMonkey/Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1713657), shipping in Firefox 116
 - [V8/Chrome](https://bugs.chromium.org/p/v8/issues/detail?id=11935), enabled by default in V8 v11.2 / Chrome 112 (behind the `--harmony-regexp-unicode-sets` flag in earlier versions)
-- [JavaScriptCore/Safari](https://bugs.webkit.org/show_bug.cgi?id=241593), enabled by default in [Safari Technology Preview 166](https://webkit.org/blog/13964/release-notes-for-safari-technology-preview-166/)
+- [JavaScriptCore/Safari](https://bugs.webkit.org/show_bug.cgi?id=241593), enabled by default in [Safari Technology Preview 166](https://webkit.org/blog/13964/release-notes-for-safari-technology-preview-166/) & [Safari 17](https://webkit.org/blog/14205/news-from-wwdc23-webkit-features-in-safari-17-beta/)
 - [Babel](https://babeljs.io/blog/2022/02/02/7.17.0) via [regexpu-core](https://github.com/mathiasbynens/regexpu-core)
 - [ICU class UnicodeSet](https://unicode-org.github.io/icu/userguide/strings/unicodeset.html) can be built from a string with syntax like a regular expression character class. UnicodeSet has long supported set operations and multi-character strings, and recently ([in ICU 70](https://unicode-org.atlassian.net/browse/ICU-21652)) added support for emoji properties of strings.
 - [C++ SRELL (`std::regex`-like library)](https://www.akenotsuki.com/misc/srell/en/#ecmascript_regexp)
