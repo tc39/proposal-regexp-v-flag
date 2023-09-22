@@ -371,7 +371,10 @@ No. It’s an explicit goal of our proposal that a correct ECMAScript lexer befo
 
 (We initially developed the draft spec changes in a [Google Doc](https://docs.google.com/document/d/1Tbv3hfX9CxQtzH9r-JdxJsQZhmmDsidRUKKxg345JV0/edit), but later moved all of the changes from there to the pull request.)
 
-Integration with the `pattern` attribute in the HTML Standard: https://github.com/whatwg/html/pull/7908
+Integration with other standards:
+
+- Integration with the `pattern` attribute in the HTML Standard: https://github.com/whatwg/html/pull/7908
+- Integration with the `URLPattern` API: https://github.com/WICG/urlpattern/issues/178
 
 ## Implementations
 
